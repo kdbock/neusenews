@@ -7,15 +7,15 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#d2982a",    // Gold active color
-        tabBarInactiveTintColor: "#2d2c31",  // Dark gray inactive color
+        tabBarActiveTintColor: "#d2982a", // Gold active color
+        tabBarInactiveTintColor: "#2d2c31", // Dark gray inactive color
         tabBarStyle: {
           backgroundColor: "#ffffff",
           position: 'absolute', // Ensure the tab bar is positioned at the bottom
           bottom: 0, // Align the tab bar to the bottom
-          height: 50, // Adjust height for both iOS and Android
+          height: Platform.OS === "ios" ? 50 : 50, // Adjust height for iOS
           paddingBottom: Platform.OS === "ios" ? 20 : 0, // Add padding for iOS
-          marginBottom: 5, // Margin for both iOS and Android
+          marginBottom: Platform.OS === "android" ? 5 : 5,
         },
       }}
     >
