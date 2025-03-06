@@ -1,4 +1,4 @@
-package com.neusenews
+package com.wordnerd.neusenews
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

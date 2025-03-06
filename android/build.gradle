@@ -12,10 +12,20 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        // Note: No explicit version needed for com.android.tools.build:gradle
+        // since the plugin version is handled by RN plugin or by you
+        classpath('com.android.tools.build:gradle:8.8.2') // example
+
+        // The new React Native Gradle plugin
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+
+        // Kotlin plugin
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+
+        // Firebase / Google Services
+        classpath("com.google.gms:google-services:4.4.2")
     }
 }
 
+// This line applies the new "rootproject" plugin from RN 0.72+:
 apply plugin: "com.facebook.react.rootproject"
