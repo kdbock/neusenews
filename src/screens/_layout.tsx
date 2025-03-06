@@ -13,9 +13,9 @@ export default function TabLayout() {
           backgroundColor: "#ffffff",
           position: 'absolute', // Ensure the tab bar is positioned at the bottom
           bottom: 0, // Align the tab bar to the bottom
-          height: Platform.OS === "ios" ? 50 : 50, // Adjust height for iOS
+          height: 50, // Adjust height for both iOS and Android
           paddingBottom: Platform.OS === "ios" ? 20 : 0, // Add padding for iOS
-          marginBottom: Platform.OS === "android" ? 5 : 5,
+          marginBottom: 5, // Margin for both iOS and Android
         },
       }}
     >
@@ -24,7 +24,7 @@ export default function TabLayout() {
         options={{
           title: "NEWS",
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: { color: string; size: number }) => (
             <Ionicons name="newspaper-outline" size={size} color={color} />
           ),
         }}
@@ -34,7 +34,7 @@ export default function TabLayout() {
         options={{
           title: "SPORTS",
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: { color: string; size: number }) => (
             <Ionicons name="football-outline" size={size} color={color} />
           ),
         }}
@@ -44,7 +44,7 @@ export default function TabLayout() {
         options={{
           title: "POLITICS",
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: { color: string; size: number }) => (
             <Ionicons name="briefcase-outline" size={size} color={color} />
           ),
         }}
@@ -54,7 +54,7 @@ export default function TabLayout() {
         options={{
           title: "BUSINESS",
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: { color: string; size: number }) => (
             <Ionicons name="cash-outline" size={size} color={color} />
           ),
         }}
@@ -64,7 +64,7 @@ export default function TabLayout() {
         options={{
           title: "CLASSIFIEDS",
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color, size }: { color: string; size: number }) => (
             <Ionicons name="list-outline" size={size} color={color} />
           ),
         }}

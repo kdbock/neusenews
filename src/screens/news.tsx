@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import * as WebBrowser from "expo-web-browser";
 import * as Clipboard from "expo-clipboard";
-import { useLocalSearchParams } from "expo-router";
+import { useSearchParams } from "react-router-dom";
 import { Ionicons } from "@expo/vector-icons";
 import fetchRSSFeed, { Article } from "../utils/fetchRSSFeed";
 
@@ -21,8 +21,8 @@ export default function NewsScreen() {
   const [loading, setLoading] = useState(true);
 
   // Handle possible string | string[] from route params
-  const params = useLocalSearchParams();
-  const feedUrlParam = params.rssUrl;
+  const [params] = useSearchParams();
+  const feedUrlParam = params.get('rssUrl');
   const feedUrl = Array.isArray(feedUrlParam)
     ? feedUrlParam[0]
     : feedUrlParam || "https://www.neusenews.com/index?format=rss";
