@@ -10,8 +10,8 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
 import Header from "../components/Header"; // Import your Header component
-import RssItemCard from "../components/RssItemCard"; // Import your RSS card component
-import fetchRSSFeed from "../services/rssService"; // Import your RSS fetching function
+import RssItemCard from "/Users/kristykelly/Develop/neusenews/src/components/RssItemCard"; // Import your RSS card component
+import fetchRSSFeed from "/Users/kristykelly/Develop/neusenews/src/services/rssService"; // Import your RSS fetching function
 
 interface RssFeedItem {
   id: string;
@@ -19,7 +19,7 @@ interface RssFeedItem {
   link: string;
 }
 
-export default function HomeScreen() {
+function HomeScreen() {
   const navigation = useNavigation();
   const [rssItems, setRssItems] = useState<RssFeedItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
