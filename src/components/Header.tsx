@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import DropDownPicker, { ItemType } from 'react-native-dropdown-picker';
 import * as WebBrowser from 'expo-web-browser';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation/types'; // Adjust the path as necessary
 
 // Type for the items in the dropdown
 type DropdownItem = {
@@ -10,8 +11,7 @@ type DropdownItem = {
   value: string;
 };
 
-export default function Header() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [open, setOpen] = useState(false);
   // The 'value' can be null if nothing is selected
   const [value, setValue] = useState<string | null>(null);

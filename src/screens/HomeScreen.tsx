@@ -8,10 +8,11 @@ import {
   StyleSheet,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import { MaterialIcons } from "@expo/vector-icons";
 import Header from "../components/Header"; // Import your Header component
-import RssItemCard from "/Users/kristykelly/Develop/neusenews/src/components/RssItemCard"; // Import your RSS card component
-import fetchRSSFeed from "/Users/kristykelly/Develop/neusenews/src/services/rssService"; // Import your RSS fetching function
+import RssItemCard from "../components/RssItemCard"; // Import your RSS card component
+import RssService from "../services/rssService"; // Import your RSS fetching function
 
 interface RssFeedItem {
   id: string;
@@ -19,8 +20,13 @@ interface RssFeedItem {
   link: string;
 }
 
+type RootStackParamList = {
+  WebViewScreen: { url: string };
+  // other routes can be added here
+};
+
 function HomeScreen() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   const [rssItems, setRssItems] = useState<RssFeedItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(
@@ -43,7 +49,7 @@ function HomeScreen() {
   const fetchNews = async (url: string) => {
     setIsLoading(true);
     try {
-      const items = await fetchRSSFeed(url);
+      const items = await RssService.fetchFeed(url);
       setRssItems(items);
     } catch (error) {
       console.error("Error fetching RSS feed:", error);

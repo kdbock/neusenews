@@ -20,6 +20,7 @@
     "expo-clipboard": "^7.0.1",
     "expo-modules-core": "^2.2.2",
     "expo-router": "^4.0.17",
+    "expo-sharing": "^13.0.1",
     "expo-web-browser": "^14.0.2",
     "fast-xml-parser": "^5.0.8",
     "react": "18.3.1",

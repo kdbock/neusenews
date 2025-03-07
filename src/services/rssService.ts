@@ -6,6 +6,7 @@ interface RssFeedItem {
   link: string;
   description: string;
   imageUrl: string;
+  id: string;
 }
 
 export default class RssService {
@@ -41,6 +42,7 @@ export default class RssService {
           link: item.link || "",
           description: item.description || "",
           imageUrl: imageUrl,
+          id: crypto.randomUUID(),
         };
       });
     } catch (error) {
