@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {
+  View,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  StyleSheet
+} from 'react-native';
 
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../types'; // Adjust the import path as necessary
+import { RootStackParamList } from '../types'; // Ensure this is correctly defined
 
 type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -13,6 +20,7 @@ type Props = {
 const LoginScreen = ({ navigation }: Props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
   return (
     <View style={styles.container}>
       <Image
@@ -33,7 +41,7 @@ const LoginScreen = ({ navigation }: Props) => {
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PrimaryLanding')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
         <Text style={styles.buttonText}>Sign In</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>

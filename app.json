@@ -1,4 +1,14 @@
 {
-  "name": "neusenews",
-  "displayName": "neusenews"
+  "expo": {
+    "name": "neusenews",
+    "slug": "neusenews",
+    "version": "1.0.0",
+    "sdkVersion": "52.0.0",
+    "android": {
+      "package": "com.kristykelly.neusenews"
+    },
+    "ios": {
+      "bundleIdentifier": "com.kristykelly.neusenews"
+    }
+  }
 }

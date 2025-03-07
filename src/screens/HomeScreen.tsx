@@ -1,15 +1,17 @@
 import { useEffect } from "react";
-import { useNavigation, useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../types"; // Ensure this file defines your navigation types
+
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
-  const router = useRouter();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   useEffect(() => {
-    navigation.setOptions({ headerShown: false }); // Hides unwanted header
-    router.replace("/news"); // Navigate to the news feed screen
-  }, [navigation, router]);
+    navigation.setOptions({ headerShown: false }); // Hide header
+  }, [navigation]);
 
-  return <View style={{ flex: 1 }} />;
+  return <View style={{ flex: 1, backgroundColor: "white" }} />;
 }

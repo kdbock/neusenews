@@ -1,0 +1,11 @@
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, id:44252014-C60D-498E-876B-6BE1731260D7, OS:18.2, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:44252014-C60D-498E-876B-6BE1731260D7, OS:18.2, name:iPhone 16 Pro }
+** BUILD FAILED **
+
+
+The following build commands failed:
+	SwiftEmitModule normal arm64 Emitting\ module\ for\ Expo (in target 'Expo' from project 'Pods')
+	EmitSwiftModule normal arm64 (in target 'Expo' from project 'Pods')
+	Building workspace neusenews with scheme neusenews and configuration Debug
+(3 failures)

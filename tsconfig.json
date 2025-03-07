@@ -1,5 +1,5 @@
-// filepath: /workspaces/neusenews/tsconfig.json
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -25,7 +25,9 @@
     "src"
   ],
   "exclude": [
-    "src/utils/rssFetcher.js"
-  ],
-  "extends": "expo/tsconfig.base"
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }
